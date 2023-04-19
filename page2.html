@@ -7,6 +7,8 @@
     <title>Page 2</title>
   </head>
   <body>
+    <button onclick="playVideo()">Watch Video</button>
+
     <div class="iframe-container">
       <div id="player"></div>
     </div>
@@ -33,14 +35,15 @@
         });
       }
 
+      function playVideo() {
+        player.unMute();
+        player.playVideo();
+      }
+
       // 4. The API will call this function when the video player is ready.
       function onPlayerReady(event) {
         player.mute();
         //event.target.setVolume(70);
-        setTimeout(function () {
-          player.unMute();
-        }, 1000);
-        player.playVideo();
       }
 
       // 5. The API calls this function when the player's state changes.
